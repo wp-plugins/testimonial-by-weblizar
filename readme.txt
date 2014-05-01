@@ -15,7 +15,7 @@ Responsive Simple Beautiful Effective Flexible Testimonial Plugin
 
 Testimonial by [Weblizar](http://www.weblizar.com/) plugin is very simple and easy plugin to manage customer testimonial about products services and support. 
 
-Using `[WLT]` shortcode you can publish customers testimonial in Page or Post.
+Using **[WLT]** shortcode you can publish customers testimonial in Page or Post.
 
 In any business or for any product, one of the most important items of feedback an owner or distributor can have is testimonial letters.
 
