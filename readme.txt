@@ -29,7 +29,7 @@ In any business or for any product, one of the most important items of feedback 
 
 = Docs & Support =
 
-You can find [docs](http://www.weblizar.com/docs/testimonial/lite/), [FAQ](http://www.weblizar.com/faq/) and more detailed information about Testimonial on [Weblizar](http://www.weblizar.com). If you were unable to find the answer to your question on the FAQ or in any of the documentation, you should check the [support forum](http://wordpress.org/support/plugin/testimonial-by-weblizar/) on WordPress.org.
+You can find [docs](http://weblizar.com/testimonial-plugin-weblizar-lite/), [FAQ](http://www.weblizar.com/faq/) and more detailed information about Testimonial on [Weblizar](http://www.weblizar.com). If you were unable to find the answer to your question on the FAQ or in any of the documentation, you should check the [support forum](http://wordpress.org/support/plugin/testimonial-by-weblizar/) on WordPress.org.
 
 = We Need Your Support =
 
@@ -42,7 +42,7 @@ Please contribute to translate our plugin.  Contact at `lizarweb (at) gmail (dot
 
 == Installation ==
 
-1. Upload the entire testimonial-by-weblizar` folder to the `/wp-content/plugins/` directory.
+1. Upload the entire `testimonial-by-weblizar` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Frequently Asked Questions ==
@@ -51,7 +51,7 @@ Please use WordPress support forum to ask any query regarding any issue.
 
 == Screenshots ==
 
-1. Responsive Layout Design
+1. Responsive Layout Plugin Design
 2. Testimonial Dashboard 
 3. Add New Testimonial
 4. View Testimonial
