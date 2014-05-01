@@ -1,7 +1,7 @@
 === Testimonial By Weblizar ===
 Contributors: weblizar
 Donate link: http://www.weblizar.com/
-Tags: simple testimonial, testimonial, testimonial widget, testimonial with pagination, testimonial template, testimonial widget, testimonial widget template, review, ratings
+Tags: testimonial, testimonial shortcode, simple testimonial, easy testimonial, testimonial widget, responsive testimonial, testimonial with pagination, testimonial template, testimonial widget, testimonial widget template
 Requires at least: 3.0
 Tested up to: 3.9
 Stable tag: 0.1
@@ -9,11 +9,11 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-Responsive Simple Beautiful Effective Flexible Testimonial Plugin.
+Responsive Simple Beautiful Effective Flexible Testimonial Plugin
 
 == Description ==
 
-Testimonial by Weblizar(http://www.weblizar.com/) plugin is very simple and easy plugin to manage customer testimonial about products services and support. Using `[WLT]` shortcode you can publish customers testimonial in Page or Post.
+Testimonial by [Weblizar](http://www.weblizar.com/) plugin is very simple and easy plugin to manage customer testimonial about products services and support. Using `[WLT]` shortcode you can publish customers testimonial in Page or Post.
 
 In any business or for any product, one of the most important items of feedback an owner or distributor can have is testimonial letters.
 
