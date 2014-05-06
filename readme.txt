@@ -1,7 +1,7 @@
 === Testimonial By Weblizar ===
 Contributors: weblizar
 Donate link: http://www.weblizar.com/
-Tags: testimonial, testimonial shortcode, testimonial widget, testimonial with responsive, testimonial template, testimonial widget, testimonial widget template
+Tags: testimonial, testimonial plugin, testimonial shortcode, testimonial widget, testimonial responsive, testimonial template, testimonial review
 Requires at least: 3.0
 Tested up to: 3.9
 Stable tag: 0.1
@@ -22,13 +22,13 @@ In any business or for any product, one of the most important items of feedback 
 == Features ==
 * Fully Responsive Design
 * Testimonial Shortcode [WLT]
-* Testimonial Widget (upcoming with new release)
+* Testimonial Widget (upcoming with new release 0.2)
 * Testimonial Management Dashboard
 * Add New Testimonial
 * Update Existing Testimonial
 * Preview or View Testimonial
 * Testimonial Settings
-* Translation Ready With .MO & .PO Files 
+* Translation Ready With .MO & .PO Files (upcoming with new release 0.2)
 
 = Docs & Support =
 
