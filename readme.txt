@@ -1,7 +1,7 @@
 === Testimonial By Weblizar ===
 Contributors: weblizar
 Donate link: http://www.weblizar.com/
-Tags: testimonial, testimonial shortcode, simple testimonial, easy testimonial, testimonial widget, responsive testimonial, testimonial with pagination, testimonial template, testimonial widget, testimonial widget template
+Tags: testimonial, testimonial shortcode, testimonial widget, testimonial with responsive, testimonial template, testimonial widget, testimonial widget template
 Requires at least: 3.0
 Tested up to: 3.9
 Stable tag: 0.1
@@ -22,6 +22,7 @@ In any business or for any product, one of the most important items of feedback 
 == Features ==
 * Fully Responsive Design
 * Testimonial Shortcode [WLT]
+* Testimonial Widget (upcoming with new release)
 * Testimonial Management Dashboard
 * Add New Testimonial
 * Update Existing Testimonial
