@@ -1,7 +1,7 @@
 === Testimonial By Weblizar ===
 Contributors: weblizar
 Donate link: http://www.weblizar.com/
-Tags: testimonial, testimonial plugin, testimonial shortcode, testimonial widget, testimonial responsive, testimonial template, testimonial review
+Tags: testimonial, testimonials, testimony, client, customer, portfolio, quotations, quote, quotes, random, recommendation, reference, review, reviews, WPML, user testimonials, random quote, shortcode manage testimonials, testimonial form, testimonial manager,
 Requires at least: 3.0
 Tested up to: 3.9
 Stable tag: 0.1
