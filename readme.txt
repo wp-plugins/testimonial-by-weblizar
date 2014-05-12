@@ -28,7 +28,7 @@ In any business or for any product, one of the most important items of feedback 
 * Update Existing Testimonial
 * Preview or View Testimonial
 * Testimonial Settings
-* Translation Ready With .MO & .PO Files
+* Translation Ready With .MO & .PO File
 
 = Docs & Support =
 
@@ -59,8 +59,8 @@ Please use WordPress support forum to ask any query regarding any issue.
 3. Add New Testimonial
 4. View Testimonial
 5. Update Testimonial
-6. Testimonial Preview In A Post
-7. Testimonial Preview In A Page
+6. Testimonial Preview in A Post
+7. Testimonial Preview in A Page
 
 == Changelog ==
 
