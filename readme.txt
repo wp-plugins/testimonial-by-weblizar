@@ -1,10 +1,10 @@
 === Testimonial By Weblizar ===
 Contributors: weblizar
 Donate link: http://www.weblizar.com/
-Tags: testimonial, testimonials, testimony, client, customer, portfolio, quotations, quote, quotes, random, recommendation, reference, review, reviews, WPML, user testimonials, random quote, shortcode manage testimonials, testimonial form, testimonial manager,
+Tags: client, customer, portfolio, quotations, quote, quotes, random, random quote, recommendation, reference, review, reviews, shortcode manage testimonials, testimonial, testimonial form, testimonial manager, testimonials, testimony, user testimonials, WPML
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 0.1
+Tested up to: 3.9.1
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,18 +17,18 @@ Testimonial by [Weblizar](http://www.weblizar.com/) plugin is very simple and ea
 
 Using **[WLT]** shortcode you can publish customers testimonial in Page or Post.
 
-In any business or for any product, one of the most important items of feedback an owner or distributor can have is testimonial letters.
+In any business or for any product, one of the most important items of feedback an owner or distributor can have is testimonial.
 
 == Features ==
 * Fully Responsive Design
 * Testimonial Shortcode [WLT]
-* Testimonial Widget (upcoming with new release 0.2)
+* Testimonial Widget
 * Testimonial Management Dashboard
 * Add New Testimonial
 * Update Existing Testimonial
 * Preview or View Testimonial
 * Testimonial Settings
-* Translation Ready With .MO & .PO Files (upcoming with new release 0.2)
+* Translation Ready With .MO & .PO Files
 
 = Docs & Support =
 
@@ -71,4 +71,9 @@ For more information, see Weblizar(http://wwww.weblizar.com/plugins/).
 * Feature - Admin Dashboard for Testimonial 
 * Feature - Add / View / Update Testimonial
 * Feature - Testimonial Shortcode [WLT]
+
+= 0.2 =
+
+* Feature - Testimonial Widget
+* Feature - Testimonial Settings
 
