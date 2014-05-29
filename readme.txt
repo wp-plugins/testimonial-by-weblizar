@@ -64,7 +64,7 @@ Please use WordPress support forum to ask any query regarding any issue.
 
 == Changelog ==
 
-For more information, see Weblizar(http://wwww.weblizar.com/plugins/).
+For more information, see Weblizar(http://wwww.weblizar.com/).
 
 = 0.1 =
 
