@@ -378,17 +378,7 @@ function Testimonial(Action, Id){
             }
         }
 
-        //website
-        var urlregex = /(http(s)?:\\)?([\w-]+\.)+[\w-]+[.com|.in|.org]+(\[\?%&=]*)?/;
-        if(Website == "") {
-            jQuery("#website-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type your website address here', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
-            return false;
-        }
-        if(urlregex.test(Website) == false ) {
-            jQuery("#website-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type valid website address', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
-            return false;
-        }
-
+      
         //testimonial
         if(Testimonial == "") {
             jQuery("#testimonial-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type your testimonial', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
