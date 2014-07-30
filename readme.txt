@@ -19,6 +19,19 @@ Using **[WLT]** shortcode you can publish customers testimonial in Page or Post.
 
 In any business or for any product, one of the most important items of feedback an owner or distributor can have is testimonial.
 
+**Features**
+* Fully Responsive Design
+* Testimonial Shortcode [WLT]
+* Testimonial Widget
+* Testimonial Management Dashboard
+* Add New Testimonial
+* Update Existing Testimonial
+* Preview or View Testimonial
+* Testimonial Settings
+* Translation Ready With .MO & .PO Files
+
+
+
 == Features ==
 * Fully Responsive Design
 * Testimonial Shortcode [WLT]
@@ -66,7 +79,7 @@ Please use WordPress support forum to ask any query regarding any issue.
 
 For more information, see Weblizar(http://wwww.weblizar.com/).
 
-= 0.2 =
+= 0.3 =
 
 * Remove require condition from website field
 
