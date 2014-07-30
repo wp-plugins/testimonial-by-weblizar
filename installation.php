@@ -4,6 +4,11 @@
  * Description: add all plugin's required database tables and default settings & values.
  */
 
+$Settings = serialize(array(
+   'short_code_title' => 'What Our Customer Says'
+));
+add_option("weblizar_testimonial_settings", $Settings);
+
 global $wpdb;
 
 /** Table 1 - testimonial  **/

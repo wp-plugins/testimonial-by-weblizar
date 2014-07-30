@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Testimonial By WebLizar
- * Version: 0.2
+ * Version: 0.3
  * Description: Display & accepts testimonial by your online clients and customers.
  * Author: WebLizar
  * Author URI: http://www.weblizar.com
@@ -26,7 +26,7 @@
  * Constant Values & Variables
  */
     define("PLUGIN_URL", plugin_dir_url(__FILE__));
-    define("WEBLIZAR_TEXT_DOMAIN", "weblizar");
+    define("WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN", "weblizar");
 
 /**
  * Plugin Installation Script
@@ -37,13 +37,22 @@ function WeblizarDoInstallation() {
 }
 
 /**
+ * Translate Plugin
+ */
+add_action('plugins_loaded', 'TranslateTestimonialPlugin');
+
+function TranslateTestimonialPlugin() {
+    load_plugin_textdomain(WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN, FALSE, dirname( plugin_basename(__FILE__)).'/plugin-languages/' );
+}
+
+/**
  * Build Admin Menu
  */
 add_action('admin_menu','WeblizarAdminMenu');
 
 function WeblizarAdminMenu() {
-    $AdminMenu = add_menu_page( __('Testimonial', WEBLIZAR_TEXT_DOMAIN), __('Testimonial', WEBLIZAR_TEXT_DOMAIN), 'administrator', 'weblizar-testimonial', 'weblizar_testimonial_admin_menu_page', 'dashicons-editor-quote');
-    //$AdminSubMenu_1 = add_submenu_page( 'weblizar-testimonial', __('Other Pages', WEBLIZAR_TEXT_DOMAIN), __('Other Pages', WEBLIZAR_TEXT_DOMAIN), 'administrator', 'weblizar-testimonial', 'weblizar_testimonial_other_menu_page' );
+    $AdminMenu = add_menu_page( __('Testimonial', WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN), __('Testimonial', WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN), 'administrator', 'weblizar-testimonial', 'weblizar_testimonial_admin_menu_page', 'dashicons-editor-quote');
+    //$AdminSubMenu_1 = add_submenu_page( 'weblizar-testimonial', __('Other Pages', WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN), __('Other Pages', WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN), 'administrator', 'weblizar-testimonial', 'weblizar_testimonial_other_menu_page' );
     add_action( 'admin_print_styles-' . $AdminMenu, 'WeblizarAdminAssetsFiles' );
 }
 
@@ -113,3 +122,8 @@ function weblizar_testimonial_other_menu_page(){
  * Testimonial ShortCode
  */
     require_once("testimonial-short-code.php");
+
+/**
+ * Testimonial Widget
+ */
+    require_once("testimonial-widget.php");

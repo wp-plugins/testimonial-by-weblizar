@@ -4,7 +4,7 @@ Donate link: http://www.weblizar.com/
 Tags: client, customer, portfolio, quotations, quote, quotes, random, random quote, recommendation, reference, review, reviews, shortcode manage testimonials, testimonial, testimonial form, testimonial manager, testimonials, testimony, user testimonials, WPML
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: 0.2
+Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,10 @@ Please use WordPress support forum to ask any query regarding any issue.
 == Changelog ==
 
 For more information, see Weblizar(http://wwww.weblizar.com/).
+
+= 0.2 =
+
+* Remove require condition from website field
 
 = 0.1 =
 

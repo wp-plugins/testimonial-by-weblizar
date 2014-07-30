@@ -3,9 +3,19 @@
  * File: Weblizar Testimonial Short-code
  */
 add_shortcode( 'WLT', 'WeblizarTestimonialShortCode' );
-function WeblizarTestimonialShortCode() { ?>
+function WeblizarTestimonialShortCode() { ob_start();
+
+    //default settings
+    $Title = __("What Our Customer Says", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN);
+
+    //Get all settings
+    $Settings = unserialize(get_option('weblizar_testimonial_settings'));
+    if(count($Settings)) {
+        $Title = $Settings['short_code_title'];
+    }
+    ?>
     <div class="row">
-        <h3 class="testimonial-header"><i class="icon-quote-left smaller-80"></i> <?php _e("What Our Customers Says", WEBLIZAR_TEXT_DOMAIN); ?></h3>
+        <h3 class="testimonial-header"><i class="icon-quote-left smaller-80"></i> <?php echo $Title; ?></h3>
         <ul class="rslides weblizar-custom">
             <?php
             global $wpdb;
@@ -23,16 +33,14 @@ function WeblizarTestimonialShortCode() { ?>
                         ?>
                             <li>
                                 <p>
-                                    <blockquote>
-                                        <?php echo ucfirst(wp_strip_all_tags($TestimonialText)); ?><br>
-                                        <small>
-                                            <strong><?php echo ucwords($Name); ?></strong><br>
-                                        </small>
+                                    <?php echo ucfirst(wp_strip_all_tags($TestimonialText)); ?><br>
+                                    <small>
+                                        <strong>&#8212; <?php echo ucwords($Name); ?></strong><br>
+                                    </small>
                                     <cite title="Source Title">
                                         <?php if($Email) { echo "$Email<br>"; } ?>
-                                        <?php if($Designation) { echo "<strong>".ucwords($Designation)."</strong> ";  echo _e("at", WEBLIZAR_TEXT_DOMAIN); } ?> <a href="<?php echo $Website; ?>" target="_blank"><?php echo $Website; ?></a>
+                                        <?php if($Designation) { echo "<strong>".ucwords($Designation)."</strong> ";  echo _e("at", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); } ?> <a href="<?php echo $Website; ?>" target="_blank"><?php echo $Website; ?></a>
                                     </cite>
-                                    </blockquote>
                                 </p>
                             </li>
                         <?php
@@ -40,7 +48,7 @@ function WeblizarTestimonialShortCode() { ?>
                 } else {
                     ?>
                     <li>
-                        <?php _e('Sorry! No testimonials is published yet.', 'WEBLIZAR_TEXT_DOMAIN'); ?>
+                        <?php _e('Sorry! No Testimonials is Published.', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?>
                     </li>
                     <?php
                 }//end of count if else
@@ -54,20 +62,19 @@ function WeblizarTestimonialShortCode() { ?>
             position: relative;
             list-style: none;
             overflow: hidden;
-            width: 100%;
-            padding: 0;
-            margin: 0;
+            width: 96%;
+            margin-bottom: 8px;
         }
 
         .rslides li {
             -webkit-backface-visibility: hidden;
             position: absolute;
             display: none;
-            width: 96%;
+            width: auto;
             left: 0;
             top: 0;
-            list-style: none;
-            margin-left: 8px;
+            list-style: none !important;;
+            padding: 12px;
         }
 
         .rslides li:first-child {
@@ -117,5 +124,8 @@ function WeblizarTestimonialShortCode() { ?>
          });
     </script>
     <?php
+    $Output = ob_get_contents();
+    ob_end_clean();
+    return $Output;
 } //end of short-code function
 ?>

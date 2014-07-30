@@ -3,17 +3,21 @@
         <div class="col-xs-12" id="dashboard">
             <h3 class="header smaller lighter blue"><i class="icon-quote-left smaller-80"></i> Testimonial By Weblizar</h3>
 
-            <!--add new testimonial button-->
+            <!--testimonial buttons-->
             <p id="add-new-testimonial-button">
                 <button class="btn btn-primary" onclick="return Testimonial('ShowAddNewTestimonialForm', '');">
                     <i class="icon-plus align-top bigger-125"></i>
-                    <?php _e("Add New Testimonial", WEBLIZAR_TEXT_DOMAIN); ?>
+                    <?php _e("Add New Testimonial", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); ?>
+                </button>
+                <button id="testimonial-settings" class="btn btn-primary" onclick="return Testimonial('ShowSettingsForm', '');">
+                    <i class="icon-cogs align-top bigger-125"></i>
+                    <?php _e("Settings", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); ?>
                 </button>
             </p>
 
             <!--Table header title-->
             <div class="table-header">
-                <?php _e("Testimonial", WEBLIZAR_TEXT_DOMAIN); ?>
+                <?php _e("Testimonial", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); ?>
             </div>
 
             <!--table-->
@@ -56,8 +60,8 @@
                                         <span class="lbl"></span>
                                     </label>
                                 </th>
-                                <th role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" style="width: 500px;"><?php _e("Testimonial - Name / Company Name - Email - Website", WEBLIZAR_TEXT_DOMAIN); ?></th>
-                                <th role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" style="width: 60px; text-align: center;"><?php _e("Status", WEBLIZAR_TEXT_DOMAIN); ?></th>
+                                <th role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" style="width: 500px;"><?php _e("Testimonial - Name / Company Name - Email - Website", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); ?></th>
+                                <th role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" style="width: 60px; text-align: center;"><?php _e("Status", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); ?></th>
                                 <th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 60px;" aria-label=""></th>
                             </tr>
                         </thead>
@@ -67,6 +71,7 @@
                                 foreach($Testimonials as $Testimonial) {
                                     $Id = $Testimonial->id;
                                     $Name = $Testimonial->name;
+                                    $Designation = $Testimonial->designation;
                                     $Email = $Testimonial->email;
                                     $Website = $Testimonial->website;
                                     $TestimonialText = $Testimonial->testimonial;
@@ -87,9 +92,8 @@
                                             <?php echo ucwords($Name); ?><br>
                                             <cite title="Source Title">
                                                 <?php if($Email) { ?> <?php echo "$Email<br>"; } ?>
-                                                <a href="#" target="_blank"><?php echo $Website; ?></a>
+                                                <?php if($Designation) { echo "<strong>".ucwords($Designation)."</strong> ";  echo _e("at", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); } ?> <a href="<?php echo $Website; ?>" target="_blank"><?php echo $Website; ?></a>
                                             </cite>
-
                                         </small>
                                     </blockquote>
                                 </td>
@@ -153,7 +157,7 @@
                                 <td>&nbsp;</td>
                                 <td>
                                     <div class="alert alert-danger">
-                                        <strong><?php _e("Sorry!", WEBLIZAR_TEXT_DOMAIN); ?></strong> <?php _e("No record is found.", WEBLIZAR_TEXT_DOMAIN); ?>
+                                        <strong><?php _e("Sorry!", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); ?></strong> <?php _e("No record is found.", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); ?>
                                     </div>
                                 </td>
                                 <td>&nbsp;</td>
@@ -195,9 +199,10 @@
 
     <!--row div for testimonial form-->
     <?php require_once("testimonial-form.php"); ?>
+
 </div>
 
-<div class="hr hr-18 dotted hr-double"></div>
+
 
 <!--jQuery Works-->
 <script>
@@ -233,41 +238,30 @@ function Testimonial(Action, Id){
         //name
         if(Name == "") {
             jQuery("#name").focus();
-            jQuery("#name-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type your name', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+            jQuery("#name-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type your name', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
             return false;
         }
 
         //email
         var EmailRegex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         /*if(Email == "") {
-            jQuery("#email-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type your email', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+            jQuery("#email-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type your email', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
             return false;
         }*/
         if(Email) {
             if(EmailRegex.test(Email) == false ) {
                 jQuery("#email").focus();
-                jQuery("#email-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type valid email', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+                jQuery("#email-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type valid email', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
                 return false;
             }
         }
 
-        //website
-        var urlregex = /(http(s)?:\\)?([\w-]+\.)+[\w-]+[.com|.in|.org]+(\[\?%&=]*)?/;
-        if(Website == "") {
-            jQuery("#website").focus();
-            jQuery("#website-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type your website address here', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
-            return false;
-        }
-        if(urlregex.test(Website) == false ) {
-            jQuery("#website").focus();
-            jQuery("#website-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type valid website address', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
-            return false;
-        }
+       
 
         //testimonial
         if(Testimonial == "") {
             jQuery("#testimonial").focus();
-            jQuery("#testimonial-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type your testimonial', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+            jQuery("#testimonial-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type your testimonial', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
             return false;
         }
 
@@ -367,19 +361,19 @@ function Testimonial(Action, Id){
 
         //name
         if(Name == "") {
-            jQuery("#name-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type your name', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+            jQuery("#name-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type your name', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
             return false;
         }
 
         //email
         var EmailRegex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         /*if(Email == "") {
-         jQuery("#email-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type your email', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+         jQuery("#email-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type your email', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
          return false;
          }*/
         if(Email) {
             if(EmailRegex.test(Email) == false ) {
-                jQuery("#email-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type valid email', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+                jQuery("#email-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type valid email', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
                 return false;
             }
         }
@@ -387,17 +381,17 @@ function Testimonial(Action, Id){
         //website
         var urlregex = /(http(s)?:\\)?([\w-]+\.)+[\w-]+[.com|.in|.org]+(\[\?%&=]*)?/;
         if(Website == "") {
-            jQuery("#website-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type your website address here', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+            jQuery("#website-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type your website address here', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
             return false;
         }
         if(urlregex.test(Website) == false ) {
-            jQuery("#website-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type valid website address', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+            jQuery("#website-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type valid website address', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
             return false;
         }
 
         //testimonial
         if(Testimonial == "") {
-            jQuery("#testimonial-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TEXT_DOMAIN'); ?></strong> <?php _e('Type your testimonial', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+            jQuery("#testimonial-div").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <strong><?php _e('Field Required:', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></strong> <?php _e('Type your testimonial', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
             return false;
         }
 
@@ -435,7 +429,7 @@ function Testimonial(Action, Id){
                 data : PostData,
                 complete : function() {  },
                 success: function(Data) {
-                    jQuery("#dashboard").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <?php _e('Testimonial successfully deleted', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+                    jQuery("#dashboard").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <?php _e('Testimonial successfully deleted', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
                     location.href = "?page=weblizar-testimonial";
                 }
             });
@@ -448,8 +442,8 @@ function Testimonial(Action, Id){
             return this.value;
         }).get();
         if(SelectedCheckBoxes == "") {
-            alert('<?php _e("First select one or more testimonials.", WEBLIZAR_TEXT_DOMAIN); ?>');
-        } else if ( confirm("<?php _e("Are you sure to delete selected testimonials?", WEBLIZAR_TEXT_DOMAIN); ?>")) {
+            alert('<?php _e("First select one or more testimonials.", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); ?>');
+        } else if ( confirm("<?php _e("Are you sure to delete selected testimonials?", WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN); ?>")) {
             var PostData = "Action=" + Action + "&Id=" + SelectedCheckBoxes;
             jQuery.ajax({
                 dataType : 'html',
@@ -459,11 +453,46 @@ function Testimonial(Action, Id){
                 data : PostData,
                 complete : function() {  },
                 success: function(data) {
-                    jQuery("#dashboard").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <?php _e('Selected Testimonials successfully deleted', 'WEBLIZAR_TEXT_DOMAIN'); ?></div>");
+                    jQuery("#dashboard").after("<div class='tError alert alert-danger'><button class='close' data-dismiss='alert' type='button'><i class='icon-remove'></i></button> <?php _e('Selected Testimonials successfully deleted', 'WEBLIZAR_TESTIMONIAL_TEXT_DOMAIN'); ?></div>");
                     location.href = "?page=weblizar-testimonial";
                 }
             });
         }
+    }
+
+    /**
+     * Testimonial Settings Ajax
+     */
+
+    //on-click settings button
+    if(Action == "ShowSettingsForm") {
+        jQuery("#dashboard").hide();
+        jQuery("#testimonial-settings-form").show();
+    }
+
+    //on-click settings go back button at testimonial settings form
+    if(Action == "SettingsGoBack") {
+        jQuery("#testimonial-settings-form").hide();
+        jQuery("#dashboard").show();
+    }
+
+    //on-click update button at testimonial dashboard
+    if(Action == "SaveSettings") {
+        var ShortCodeTitle = jQuery("#short-code-title").val();
+        var PostData = "Action=" + Action + "&ShortCodeTitle=" + ShortCodeTitle;
+        jQuery.ajax({
+            dataType : 'html',
+            type: 'POST',
+            url : location.href,
+            cache: false,
+            data : PostData,
+            complete : function() {  },
+            success: function(Data) {
+                jQuery("#save-settings").hide();
+                jQuery("#settings-go-back").hide();
+                jQuery("#settings-success-message").show();
+            }
+        });
     }
 }
 //select all check boxes
@@ -482,7 +511,7 @@ if(isset($_POST['Action'])) {
     global $wpdb;
     $TestimonialTable = $wpdb->prefix . "weblizar_testimonials";
     $Action = $_POST['Action'];
-    $Id = $_POST['Id'];
+
 
     //Save
     if($Action === "Save") {
@@ -497,6 +526,7 @@ if(isset($_POST['Action'])) {
 
     //Update
     if($Action === "DoUpdate" && $Id) {
+        $Id = $_POST['Id'];
         $Name = $_POST['Name'];
         $Email = $_POST['Email'];
         $Website = $_POST['Website'];
@@ -508,11 +538,13 @@ if(isset($_POST['Action'])) {
 
     //Delete
     if($Action === "Delete" && $Id) {
+        $Id = $_POST['Id'];
         $wpdb->query("DELETE FROM `$TestimonialTable` WHERE `id` = '$Id'");
     }
 
     //Delete All
     if($Action === "DeleteAll") {
+        $Id = $_POST['Id'];
         $Ids = explode(",", $Id);
         if(count($Ids)) {
             for($i = 0; $i < count($Ids); $i++) {
@@ -520,6 +552,16 @@ if(isset($_POST['Action'])) {
                 $wpdb->query("DELETE FROM `$TestimonialTable` WHERE `id` = '$DelId'");
             }
         }
+    }
+
+    //Save Settings
+    if($Action == "SaveSettings") {
+        print_r($Action);
+        $ShortCodeTitle = $_POST['ShortCodeTitle'];
+        $Settings = serialize(array(
+            'short_code_title' => $ShortCodeTitle
+        ));
+        update_option('weblizar_testimonial_settings', $Settings);
     }
 }
 ?>
