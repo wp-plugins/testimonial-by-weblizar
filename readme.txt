@@ -4,7 +4,7 @@ Donate link: http://www.weblizar.com/
 Tags: client, customer, portfolio, quotations, quote, quotes, random, random quote, recommendation, reference, review, reviews, shortcode manage testimonials, testimonial, testimonial form, testimonial manager, testimonials, testimony, user testimonials, WPML
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: 0.3
+Stable tag: 0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +20,6 @@ Using **[WLT]** shortcode you can publish customers testimonial in Page or Post.
 In any business or for any product, one of the most important items of feedback an owner or distributor can have is testimonial.
 
 **Features**
-
 * Fully Responsive Design
 * Testimonial Shortcode [WLT]
 * Testimonial Widget
@@ -34,6 +33,7 @@ In any business or for any product, one of the most important items of feedback 
 
 
 == Features ==
+
 * Fully Responsive Design
 * Testimonial Shortcode [WLT]
 * Testimonial Widget
@@ -80,7 +80,7 @@ Please use WordPress support forum to ask any query regarding any issue.
 
 For more information, see Weblizar(http://wwww.weblizar.com/).
 
-= 0.3 =
+= 0.4 =
 
 * Remove require condition from website field
 

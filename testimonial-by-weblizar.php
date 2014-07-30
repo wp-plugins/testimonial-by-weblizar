@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Testimonial By WebLizar
- * Version: 0.3
+ * Version: 0.4
  * Description: Display & accepts testimonial by your online clients and customers.
  * Author: WebLizar
  * Author URI: http://www.weblizar.com
