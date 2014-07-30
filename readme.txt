@@ -33,6 +33,7 @@ In any business or for any product, one of the most important items of feedback 
 
 
 == Features ==
+
 * Fully Responsive Design
 * Testimonial Shortcode [WLT]
 * Testimonial Widget
