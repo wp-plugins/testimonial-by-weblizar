@@ -1,10 +1,10 @@
 === Testimonial By Weblizar ===
 Contributors: weblizar
 Donate link: http://www.weblizar.com/
-Tags: client, customer, portfolio, quotations, quote, quotes, random, random quote, recommendation, reference, review, reviews, shortcode manage testimonials, testimonial, testimonial form, testimonial manager, testimonials, testimony, user testimonials, WPML
+Tags: client, customer, portfolio, quotations, quote, quotes, random, random quote, recommendation, reference, review, reviews, shortcode manage testimonials, testimonial, testimonial form, testimonial manager, testimonials, testimony, user testimonials, WPML, responsive, plugin, widget, shortcode, auhtor, user, profile, website , responsive testimonial , contact, slider, carousel,  
 Requires at least: 3.0
-Tested up to: 3.9.1
-Stable tag: 0.4
+Tested up to: 4.0
+Stable tag: 0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,11 @@ Please use WordPress support forum to ask any query regarding any issue.
 == Changelog ==
 
 For more information, see Weblizar(http://wwww.weblizar.com/).
+
+= 0.5 =
+
+* Compatible with wordpress 4.0
+* Resolve some small bug
 
 = 0.4 =
 
