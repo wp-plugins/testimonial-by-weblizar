@@ -19,7 +19,8 @@ Using **[WLT]** shortcode you can publish customers testimonial in Page or Post.
 
 In any business or for any product, one of the most important items of feedback an owner or distributor can have is testimonial.
 
-**Features**
+== Features ==
+
 * Fully Responsive Design
 * Testimonial Shortcode [WLT]
 * Testimonial Widget
